@@ -1,0 +1,46 @@
+<header>
+  <div class="logoapp">
+    <a id="log" href="#"><img class="logo_header" src="/./assets/img/pmaicon.svg"><i>PMA</i></a>
+  </div>
+
+  <div class="switcher">
+    <button class="sw-en">EN</button>
+    <button class="sw-ru">RU</button>
+  </div>
+
+  <div class="log">
+    <a routerLink="/login" routerLinkActive="active"><button class="login">Login</button></a>
+    <a href="sign"><button class="sign-up">Sign Up</button></a>
+  </div>
+</header>
+<main>
+  <form class="login_container" [formGroup]="form" (submit)="register()">
+    <div class="login_input">
+      <label> Login </label>
+      <input class="login_area" type="text" formControlName="login" required pattern="string"/>
+    </div>
+    <div class="login_name">
+      <label>Your name</label>
+      <input class="login_area" type="text" formControlName="login_name" required/>
+    </div>
+    <div class="login_password">
+      <label>Password</label>
+      <input type="password" formControlName="password" required/>
+    </div>
+    <div class="repeat_password">
+      <label>Repeat password</label>
+      <input type="password" formControlName="password_confirmation" required/>
+    </div>
+
+    <button class="login_button" type="submit">Sign Up</button>
+  </form>
+</main>
+
+<footer class="footer_container">
+  <div class="footer_link"><a class="git_link" href="https://github.com/MartaKutash" target="_blank">Marta Kutash</a>
+    </div>
+  <div class="date_footer">April 2023</div>
+    <div class="rsschool">
+      <a href="https://rs.school/js/" target="_blank"><img class="logo_footer" src="/./assets/img/rsschooljs.svg" alt="RSSchool logo"></a>
+    </div>
+</footer>

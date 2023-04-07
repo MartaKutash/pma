@@ -17,14 +17,14 @@
   <form class="login_container">
     <div class="login_input">
       <label> Login </label>
-      <input id="login_area" type="text" [(ngModel)] = "loginObj.login" required/>
+      <input id="login_area" type="text" required/>
     </div>
     <div class="login_password">
       <label>Password</label>
-      <input id="pass" type="password" [(ngModel)] = "loginObj.password" required/>
+      <input id="pass" type="password" required/>
     </div>
 
-    <button (click)="onLogin()" class="login_button" type="submit">Login</button>
+    <button (click)="login()" class="login_button" type="submit">Login</button>
   </form>
 </main>
 

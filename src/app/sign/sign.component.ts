@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { Token, RegisterUser } from "../services/interfaces";
+
+
 
 @Component({
   selector: 'app-sign',
@@ -20,14 +23,32 @@ export class SignComponent implements OnInit {
     });
   }
 
-  constructor(private formBuilder: FormBuilder, auth: AuthService) {
+  constructor(private formBuilder: FormBuilder, private auth: AuthService) {
 
   }
+  token: Token | undefined;
   register() {
     console.log('register');
-    console.log(this.form.get('login').value);
+    let user = {
+      login: this.form.get('login').value,
+      login_name: this.form.get('login_name').value,
+      password: this.form.get('password').value,
+      password_confirmation: this.form.get('password_confirmation').value
+    }
 
+    console.log(user)
+    console.log(this.form.value)
+
+    this.auth.login(user).subscribe(data => {
+      this.token = data
+      console.log(data)
+      console.log(this.token)
+      localStorage.setItem("token", this.token.token)
+      console.log(localStorage.getItem("token"))
+      //редирект куда-то
+    })
 
   }
 
-}
+  }
+

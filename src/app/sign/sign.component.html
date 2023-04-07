@@ -14,7 +14,7 @@
   </div>
 </header>
 <main>
-  <form class="sigin_container" [formGroup]="form" (submit)="register()">
+  <form class="sigin_container" [formGroup]="form" (ngSubmit)="register()">
     <div class="login_input">
       <label> Login </label>
       <input class="login_area" type="text" formControlName="login_1" required pattern="string"/>
@@ -32,7 +32,7 @@
       <input type="password" formControlName="password_confirmation" required/>
     </div>
 
-    <button (click)="register()" class="login_button" type="submit">Sign Up</button>
+    <button (ngSubmit)="register()" class="login_button" type="submit">Sign Up</button>
   </form>
 </main>
 

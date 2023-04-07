@@ -27,14 +27,14 @@ token: Token | undefined;
   login() {
     console.log('login');
     let user = {
-      'login': this.form.get('login_form').value,
-      'password': this.form.get('password_form').value
+      login: this.form.get('login_form').value,
+      password: this.form.get('password_form').value
     }
 
     console.log(user)
     console.log(this.form.value)
 
-    this.auth.login(this.form.value).subscribe(data => {
+    this.auth.login(user).subscribe(data => {
       this.token = data
       console.log(data)
       console.log(this.token)

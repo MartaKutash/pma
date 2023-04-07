@@ -30,10 +30,9 @@ export class SignComponent implements OnInit {
   register() {
     console.log('register');
     let user = {
-      login: this.form.get('login').value,
-      login_name: this.form.get('login_name').value,
-      password: this.form.get('password').value,
-      password_confirmation: this.form.get('password_confirmation').value
+      login: this.form.get('login_1').value,
+      name: this.form.get('login_name').value,
+      password: this.form.get('password_1').value,
     }
 
     console.log(user)

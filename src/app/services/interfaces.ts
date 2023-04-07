@@ -10,7 +10,7 @@ export interface Token {
 
 export interface RegisterUser {
   login: string
-  login_name: string
+  name: string
   password: string
 }
 

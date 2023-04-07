@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms'
-import { Validator } from '@angular/forms'
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import {Token, User} from "../services/interfaces";
@@ -10,29 +9,32 @@ import {Token, User} from "../services/interfaces";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   form: any = FormGroup;
 
 constructor(private formBuilder: FormBuilder, private auth: AuthService) {
 
 }
 
-ngOnInit(): void {
-
+ngOnInit() {
+  this.form = this.formBuilder.group( {
+    login_form: this.formBuilder.control('',Validators.required),
+    password_form: this.formBuilder.control('', Validators.compose([Validators.required, Validators.minLength(8)])),
+  });
 }
 
 token: Token | undefined;
   login() {
     console.log('login');
     let user = {
-      login: this.form.get('login').value,
-      password: this.form.get('password').value
+      'login': this.form.get('login_form').value,
+      'password': this.form.get('password_form').value
     }
 
     console.log(user)
     console.log(this.form.value)
 
-    this.auth.login(user).subscribe(data => {
+    this.auth.login(this.form.value).subscribe(data => {
       this.token = data
       console.log(data)
       console.log(this.token)

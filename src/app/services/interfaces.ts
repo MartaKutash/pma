@@ -12,5 +12,12 @@ export interface RegisterUser {
   login: string
   login_name: string
   password: string
-  password_confirmation: string
+}
+
+export interface ResponseObj {
+  obj: {
+    id: string
+    name: string
+    login: string
+  }
 }

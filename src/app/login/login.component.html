@@ -14,17 +14,17 @@
   </div>
 </header>
 <main>
-  <form class="login_container">
+  <form class="login_container" [formGroup]="form" (ngSubmit)="login()">
     <div class="login_input">
       <label> Login </label>
-      <input id="login_area" type="text" required/>
+      <input id="login_area" type="text" name="login_form" formControlName="login_form" required/>
     </div>
     <div class="login_password">
       <label>Password</label>
-      <input id="pass" type="password" required/>
+      <input id="pass" type="password" name="password_form" formControlName="password_form" required/>
     </div>
 
-    <button (click)="login()" class="login_button" type="submit">Login</button>
+    <button (ngSubmit)="login()" class="login_button" type="submit">Login</button>
   </form>
 </main>
 

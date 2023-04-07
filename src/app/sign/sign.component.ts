@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { Token, RegisterUser } from "../services/interfaces";
+import { ResponseObj, RegisterUser } from "../services/interfaces";
 
 
 
@@ -26,7 +26,7 @@ export class SignComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private auth: AuthService) {
 
   }
-  token: Token | undefined;
+  obj: ResponseObj | undefined;
   register() {
     console.log('register');
     let user = {
@@ -39,12 +39,12 @@ export class SignComponent implements OnInit {
     console.log(user)
     console.log(this.form.value)
 
-    this.auth.login(user).subscribe(data => {
-      this.token = data
+    this.auth.register(user).subscribe(data => {
+      this.obj = data
       console.log(data)
-      console.log(this.token)
-      localStorage.setItem("token", this.token.token)
-      console.log(localStorage.getItem("token"))
+      console.log(this.obj)
+      localStorage.setItem("obj", this.form.value)
+      console.log(localStorage.getItem("obj"))
       //редирект куда-то
     })
 

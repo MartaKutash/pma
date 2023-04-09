@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms'
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import {Token, User} from "../services/interfaces";
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import {Token, User} from "../services/interfaces";
 export class LoginComponent implements OnInit {
   form: any = FormGroup;
 
-constructor(private formBuilder: FormBuilder, private auth: AuthService) {
+constructor(private formBuilder: FormBuilder, private auth: AuthService, private router:Router) {
 
 }
 
@@ -40,7 +41,7 @@ token: Token | undefined;
       console.log(this.token)
       localStorage.setItem("token", this.token.token)
       console.log(localStorage.getItem("token"))
-      //редирект куда-то
+      this.router.navigate(['/listing'])
     })
 
   }

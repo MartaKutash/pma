@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { SignComponent } from './sign/sign.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,4 +33,6 @@ import { SignComponent } from './sign/sign.component';
 })
 export class AppModule {
   token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmIwOGVhYmE2NTE0Y2M4MDk2NjE4OCIsImxvZ2luIjoibWFydGhhIiwiaWF0IjoxNjgwNTQyMDEzLCJleHAiOjE2ODA1ODUyMTN9.JlTSN3s-aL-p_F-Qm_lX30tl4zSfKoLhivbGu2pw_3Y'
+
+
 }

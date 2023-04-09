@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { ResponseObj, RegisterUser } from "../services/interfaces";
-
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class SignComponent implements OnInit {
     });
   }
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService) {
+  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router:Router) {
 
   }
   obj: ResponseObj | undefined;
@@ -36,6 +36,7 @@ export class SignComponent implements OnInit {
     }
 
     console.log(user)
+    console.log('login')
     console.log(this.form.value)
 
     this.auth.register(user).subscribe(data => {
@@ -44,6 +45,7 @@ export class SignComponent implements OnInit {
       console.log(this.obj)
       localStorage.setItem("obj", this.form.value)
       console.log(localStorage.getItem("obj"))
+      this.router.navigate(['/listing'])
       //редирект куда-то
     })
 

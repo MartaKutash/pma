@@ -10,12 +10,13 @@
 
   <div class="log">
     <a routerLink="/login" routerLinkActive="active"><button class="login">Login</button></a>
-    <a href="sign"><button class="sign-up">Sign Up</button></a>
+    <a routerLink="/sign" routerLinkActive="active"><button class="sign-up">Sign Up</button></a>
   </div>
 </header>
 
 <main>
   <form class="sigin_container" [formGroup]="form" (ngSubmit)="register()">
+    <div><b> Edit profile</b> </div>
     <div class="login_input">
       <label> Login </label>
       <input class="login_area" type="text" formControlName="login_1" required pattern="string"/>
@@ -44,7 +45,8 @@
       <input type="password" formControlName="password_confirmation" required/>
     </div>
 
-    <button (ngSubmit)="register()" class="login_button" type="submit" [disabled]="form.invalid">Sign Up</button>
+    <button (ngSubmit)="register()" class="login_button" type="submit">Save</button>
+    <button class="delete_account" type="submit">Delete my account</button>
   </form>
 </main>
 

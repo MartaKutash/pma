@@ -1,23 +1,24 @@
-body {
-  box-sizing: border-box;
-  min-width: 100%;
-  min-height: 100%;
-}
-
 header {
   height: 100px;
-  background-color: greenyellow;
+  background-color: blueviolet;
   width: 100%;
   z-index: 59;
-  /*position: fixed;*/
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 
 .logo_header {
   width: 70px;
+  margin-left: 0px;
 }
 
 .logoapp {
-  padding-left: 20px;
+  margin-left: 0px;
 }
 
 #log {
@@ -27,8 +28,9 @@ header {
 }
 
 .switcher {
-  padding-left: 250px;
-  margin-top: -45px;
+  padding-left: 0px;
+  margin-top: 0px;
+
 }
 
 .sw-en {
@@ -41,8 +43,8 @@ header {
 }
 
 .log {
-  padding-left: 1100px;
-  margin-top: -30px;
+  padding-left: 0px;
+  margin-top: 0px;
 }
 
 .login {
@@ -55,20 +57,25 @@ header {
 }
 
 main {
-  height: 450px;
+  padding-top: 110px;
+  height: 150%;
   width: 100%;
+  display: flex;
+  margin: auto;
 }
 
 .sigin_container {
   width: 250px;
   height: 400px;
-  border: 1px solid green;
+  border: 1px solid blueviolet;
   background-color: rgb(235, 235, 228);
-  margin-left: 500px;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  margin-bottom: 50px;
-  /*border-radius:  8%;*/
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .login_area {
@@ -79,16 +86,31 @@ main {
 
 .login_input {
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+
+.req_login {
+  color: red;
+  font-size: 10px;
 }
 
 .login_name {
   margin-left: 20px;
 }
 
+.req_name {
+  color: red;
+  font-size: 10px;
+}
+
 .login_password {
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 0px;
+}
+
+.require_passw {
+  color: red;
+  font-size: 10px;
 }
 
 .repeat_password {
@@ -98,45 +120,98 @@ main {
 
 .login_button {
   width: 100px;
-  margin-top: 30px;
-  margin-left: 70px;
+  margin: auto;
   border: 1px solid black;
 }
 
 .footer_container {
-  height: 100px;
-  background-color: greenyellow;
+  height: 70px;
+  background-color: blueviolet;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 0 auto;
 }
 
 .git_link {
   text-decoration: none;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   font-size: 20px;
   color: black;
 }
 
 .footer_link {
-  padding-top: 20px;
-  padding-left: 150px;
+  padding-top: 0px;
+  padding-left: 0px;
   font-weight: bold;
 }
 
 .rsschool {
-  padding-left: 950px;
-  margin-top: -30px;
+  padding-left: 0px;
+  margin-top: 0px;
+  width: 70px;
 }
 
 .date_footer {
   font-size: 20px;
   color: black;
   font-weight: bold;
-  padding-left: 600px;
-  margin-top: -30px ;
+  padding-left: 0px;
+  margin-top: 0px ;
 }
 
 .logo_footer{
-  width: 100px;
-  height: 50px;
-  margin-bottom: 25px;
+
+  margin-bottom: 0px;
   color: blue;
+}
+
+
+@media (max-width: 1500px) {
+  .sigin_container {
+      margin-bottom: 100px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 500px) and (min-width: 320px){
+  .sigin_container {
+    margin-bottom: 100px;
+  }
+  #log {
+   font-size: 20px;
+  }
+  .logo_header {
+    width: 40px;
+  }
+  .sw-en {
+    width: 40px;
+  }
+
+  .sw-ru {
+    width: 40px;
+    margin-left: 0px;
+  }
+
+  .log {
+    padding-left: 0px;
+    margin-top: 0px;
+  }
+
+  .login {
+    width: 50px;
+  }
+
+  .sign-up {
+    width: 75px;
+    margin-left: 0px;
+  }
 }

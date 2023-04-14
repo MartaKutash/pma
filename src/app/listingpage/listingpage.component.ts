@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 
@@ -7,16 +7,14 @@ import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
   templateUrl: './listingpage.component.html',
   styleUrls: ['./listingpage.component.css']
 })
-export class ListingpageComponent {
-  frm: string | undefined;
-  frms = [];
-  name = '';
+export class ListingpageComponent implements OnInit {
 
+ngOnInit(): void {
 
+}
 
 createboard() {
-  this.frms.push(frm);
-  this.frm = '';
+
 
 }
   constructor(private router:Router) {

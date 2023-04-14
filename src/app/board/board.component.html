@@ -1,0 +1,82 @@
+<header>
+  <div class="logoapp">
+    <a id="log" routerLink="/main" routerLinkActive="active"><img class="logo_header" src="/./assets/img/pmaicon.svg"><i>PMA</i></a>
+  </div>
+
+  <div class="switcher">
+    <button class="sw-en">EN</button>
+    <button class="sw-ru">RU</button>
+  </div>
+
+  <div class="log">
+    <button class="board_button"><img id="new_board" src="/./assets/img/newboard2.png" title="new board"></button>
+    <div class="dropdown">
+    <button class="logged_icon"><img id="logged" src="/./assets/img/loggedin.png" title="you logged"></button>
+    <div class="dropdown_content">
+      <div class="prof_name">Name</div>
+      <button id="profile_btn"><a routerLink="/delete" routerLinkActive="active">Profile</a></button>
+      <button id="logout_btn" (click)="logout()"><a href="/main">Logout</a></button>
+    </div>
+  </div>
+  </div>
+  <form id="search_form">
+    <div class="search_div">
+      <input
+        type="search"
+        id="mySearch"
+        placeholder="Search the task" />
+      <button>Search</button>
+    </div>
+  </form>
+</header>
+<main>
+  <div class="container-fluid">
+    <div cdkDropListGroup class="row">
+      <div class="col-sm-6 col-lg-3 mb-3" *ngFor="let column of data">
+
+        <!-- Column Title -->
+        <div class="d-flex justify-content-between align-items-center p-2 shadow-sm column-header">
+          <h2 class="m-0">{{column.title}}</h2>
+          <button mat-icon-button class="icon-delete" (click)="onDeleteColumn(column.id)">
+            <mat-icon style="font-size: 20px;">delete</mat-icon>
+          </button>
+        </div>
+
+        <!-- Add New Card To Column
+        <app-dialog (emitText)="onAddCard($event, column.id)">/*
+          <button mat-raised-button class="w-100 mb-1 btn-add">+</button>
+        </app-dialog>-->
+
+
+        <div cdkDropList [cdkDropListData]="column.list" class="example-list"  (cdkDropListDropped)="drop($event)" CdkDragMove>
+          <ng-container  *ngFor="let item of column.list; let i=index;">
+            <div (click)="onFocusEl(column, item)"cdkDrag [tabindex]="i + 1" class="example-box" [ngStyle]="{background: column.color}">
+              {{i}}
+              <app-board-item
+                [item]="item"
+                (emitText)="onAddComment($event, column.id)"
+                (emitCardItem)="onChangeLike($event, column.id)"
+                (emitDeleteCard)="onDeleteCard($event, column.id)"
+              >
+                <div *ngFor="let comment of item.comments">
+                  <app-comment-item [comment]="comment" (emitComment)="onDeleteComment($event, column.id, item)"></app-comment-item>
+                </div>
+              </app-board-item>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<footer class="footer_container">
+  <div class="footer_link"><a class="git_link" href="https://github.com/MartaKutash" target="_blank">Marta Kutash</a>
+    </div>
+  <div class="date_footer">April 2023</div>
+    <div class="rsschool">
+      <a href="https://rs.school/js/" target="_blank"><img class="logo_footer" src="/./assets/img/rsschooljs.svg" alt="RSSchool logo"></a>
+    </div>
+</footer>
+
+

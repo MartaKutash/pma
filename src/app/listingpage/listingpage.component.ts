@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
+import { FormControl, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-listingpage',
@@ -6,5 +8,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./listingpage.component.css']
 })
 export class ListingpageComponent {
+  frm: string | undefined;
+  frms = [];
+  name = '';
+
+
+
+createboard() {
+  this.frms.push(frm);
+  this.frm = '';
 
 }
+  constructor(private router:Router) {
+    }
+
+
+  logout() {
+    if (confirm("Do you really want to logout?") == true)
+    this.router.navigate(['/main'])
+    else {
+      this.router.navigate(['/listing'])
+    }
+  }
+
+}
+

@@ -4,16 +4,13 @@ import { AuthService } from '../services/auth.service';
 import { ResponseObj, RegisterUser } from "../services/interfaces";
 import { Route, Router } from '@angular/router';
 
-
 @Component({
-  selector: 'app-sign',
-  templateUrl: './sign.component.html',
-  styleUrls: ['./sign.component.css']
+  selector: 'app-delete-account',
+  templateUrl: './delete-account.component.html',
+  styleUrls: ['./delete-account.component.css']
 })
-export class SignComponent implements OnInit {
+export class DeleteAccountComponent implements OnInit {
   form: any = FormGroup;
-
-
   ngOnInit() {
     this.form = this.formBuilder.group( {
       login_1: this.formBuilder.control('',Validators.required),
@@ -48,11 +45,6 @@ export class SignComponent implements OnInit {
       this.router.navigate(['/listing'])
       //редирект куда-то
     })
-if ((this.login_1 == 2 || this.login_1 > 2  ) && (this.password_1 == 8 || this.password_1 > 8)) {
-  this.form.invalid = false;
-} else {
-  this.form.invalid = true;
-}
 
   }
   get password_1() {
@@ -71,4 +63,3 @@ if ((this.login_1 == 2 || this.login_1 > 2  ) && (this.password_1 == 8 || this.p
     return this.form.get('password_confirmation')
   }
   }
-

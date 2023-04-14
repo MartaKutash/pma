@@ -1,0 +1,29 @@
+main {
+  width: 100%;
+  height: 100%;
+  padding-top: 150px;
+}
+
+.board_form {
+  width: 350px;
+  height: 250px;
+  background-color: gainsboro;
+
+}
+
+.form_header {
+  width: 350px;
+  height: 80px;
+  background-color: blueviolet;
+}
+
+.del_icon {
+  width: 22px;
+  margin-left: 300px;
+  margin-top: -60px;
+}
+
+.log {
+  padding-left: 0px;
+  margin-top: 0px;
+}

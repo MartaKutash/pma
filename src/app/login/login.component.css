@@ -1,24 +1,23 @@
+/** {
+  box-sizing: border-box;
+  min-width: 100%;
+  min-height: 100%;
+}*/
+
 header {
   height: 100px;
-  background-color: blueviolet;
+  background-color: greenyellow;
   width: 100%;
   z-index: 59;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  /*position: fixed;*/
 }
 
 .logo_header {
   width: 70px;
-  margin-left: 0px;
 }
 
 .logoapp {
-  margin-left: 0px;
+  padding-left: 20px;
 }
 
 #log {
@@ -28,9 +27,8 @@ header {
 }
 
 .switcher {
-  padding-left: 0px;
-  margin-top: 0px;
-
+  padding-left: 250px;
+  margin-top: -45px;
 }
 
 .sw-en {
@@ -43,8 +41,8 @@ header {
 }
 
 .log {
-  padding-left: 0px;
-  margin-top: 0px;
+  padding-left: 1100px;
+  margin-top: -30px;
 }
 
 .login {
@@ -57,19 +55,19 @@ header {
 }
 
 main {
-  padding-top: 150px;
   height: 100%;
   width: 100%;
-  display: flex;
-  margin: auto;
 }
 
 .login_container {
   width: 250px;
   height: 300px;
-  border: 1px solid blueviolet;
+  border: 1px solid green;
   background-color: rgb(235, 235, 228);
-  margin: 0 auto;
+  margin-left: 500px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius:  8%;;
 }
 
 #login_area {
@@ -96,86 +94,39 @@ main {
 }
 
 .footer_container {
-  height: 70px;
-  background-color: blueviolet;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-
-  margin: 0 auto;
+  height: 100px;
+  background-color: greenyellow;
 }
 
 .git_link {
   text-decoration: none;
-  padding-bottom: 0px;
+  padding-bottom: 50px;
   font-size: 20px;
   color: black;
 }
 
 .footer_link {
-  padding-top: 0px;
-  padding-left: 0px;
+  padding-top: 20px;
+  padding-left: 150px;
   font-weight: bold;
 }
 
 .rsschool {
-  padding-left: 0px;
-  margin-top: 0px;
-  width: 70px;
+  padding-left: 950px;
+  margin-top: -30px;
 }
 
 .date_footer {
   font-size: 20px;
   color: black;
   font-weight: bold;
-  padding-left: 0px;
-  margin-top: 0px ;
+  padding-left: 600px;
+  margin-top: -30px ;
 }
 
 .logo_footer{
-
-  margin-bottom: 0px;
+  width: 100px;
+  height: 50px;
+  margin-bottom: 25px;
   color: blue;
 }
-
-
-@media only screen and (max-width: 500px) and (min-width: 320px){
-  .login_container {
-    margin-bottom: 100px;
-  }
-  #log {
-   font-size: 20px;
-  }
-  .logo_header {
-    width: 40px;
-  }
-  .sw-en {
-    width: 40px;
-  }
-
-  .sw-ru {
-    width: 40px;
-    margin-left: 0px;
-  }
-
-  .log {
-    padding-left: 0px;
-    margin-top: 0px;
-  }
-
-  .login {
-    width: 50px;
-  }
-
-  .sign-up {
-    width: 75px;
-    margin-left: 0px;
-  }
-}
-

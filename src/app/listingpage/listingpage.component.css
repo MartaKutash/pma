@@ -1,36 +1,23 @@
+/** {
+  box-sizing: border-box;
+  min-width: 100%;
+  min-height: 100%;
+}*/
+
 header {
-  height: 100px;
-  background-color: blueviolet;
+  height: 90px;
+  background-color: greenyellow;
   width: 100%;
   z-index: 59;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-#logout_btn {
-  border: 0;
-  background-color: azure;
-  margin-right: 100px;
-}
-
-#profile_btn {
-  border: 0;
-  background-color: azure;
-  margin-right: 100px;
+  /*position: fixed;*/
 }
 
 .logo_header {
   width: 70px;
-  margin-left: 0px;
 }
 
 .logoapp {
-  margin-left: 0px;
+  padding-left: 20px;
 }
 
 #log {
@@ -42,40 +29,6 @@ header {
 #logged {
   width: 30px;
   height: 30px;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown_content {
-  display: none;
-  position: absolute;
-  background-color: azure;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown_content a {
-  padding: 10px 10px;
-  text-decoration: none;
-  display: block;
-  color: black;
-}
-
-.dropdown_content a:hover {
-  background-color: gray;
-}
-
-.dropdown:hover .dropdown_content {
-  display: block;
-}
-
-.prof_name {
-  padding-left: 60px;
-  color: black
 }
 
 #new_board {
@@ -100,13 +53,12 @@ header {
 }
 
 #search_form {
-  margin-top: -40px;
+  margin-top: -85px;
 }
 
 .switcher {
-  padding-left: 0px;
-  margin-top: 0px;
-
+  padding-left: 250px;
+  margin-top: -45px;
 }
 
 .sw-en {
@@ -120,32 +72,12 @@ header {
 
 main {
   width: 100%;
-  height: 100%;
-  padding-top: 150px;
-}
-
-.board_form {
-  width: 350px;
-  height: 250px;
-  background-color: gainsboro;
-
-}
-
-.form_header {
-  width: 350px;
-  height: 80px;
-  background-color: blueviolet;
-}
-
-.del_icon {
-  width: 22px;
-  margin-left: 300px;
-  margin-top: -60px;
+  height: 409px;
 }
 
 .log {
-  padding-left: 0px;
-  margin-top: 0px;
+  padding-left: 1100px;
+  margin-top: -30px;
 }
 
 .login {
@@ -158,99 +90,40 @@ main {
 }
 
 .footer_container {
-  height: 70px;
-  background-color: blueviolet;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  text-align: center;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  margin: 0 auto;
+  height: 90px;
+  background-color: greenyellow;
 }
 
 .git_link {
   text-decoration: none;
-  padding-bottom: 0px;
+  padding-bottom: 50px;
   font-size: 20px;
   color: black;
 }
 
 .footer_link {
-  padding-top: 0px;
-  padding-left: 0px;
+  padding-top: 20px;
+  padding-left: 150px;
   font-weight: bold;
 }
 
 .rsschool {
-  padding-left: 0px;
-  margin-top: 0px;
-  width: 70px;
+  padding-left: 950px;
+  margin-top: -30px;
 }
 
 .date_footer {
   font-size: 20px;
   color: black;
   font-weight: bold;
-  padding-left: 0px;
-  margin-top: 0px ;
+  padding-left: 600px;
+  margin-top: -30px ;
 }
 
 .logo_footer{
-
-  margin-bottom: 0px;
+  width: 100px;
+  height: 50px;
+  margin-bottom: 25px;
   color: blue;
 }
 
-@media only screen and (max-width: 500px) and (min-width: 320px){
-  #log {
-   font-size: 20px;
-  }
-  #new_board {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(231, 228, 228);
-  }
-  #logged {
-    width: 20px;
-    height: 20px;
-  }
-
-
-  .logo_header {
-    width: 40px;
-  }
-  .sw-en {
-    width: 40px;
-  }
-
-  .sw-ru {
-    width: 40px;
-    margin-left: 0px;
-  }
-
-  .log {
-    padding-left: 0px;
-    margin-top: 0px;
-  }
-
-  .login {
-    width: 50px;
-  }
-
-  .sign-up {
-    width: 75px;
-    margin-left: 0px;
-  }
-}
-
-@media only screen and (max-width: 1200px) and (min-width: 320px){
-  #mySearch {
-    margin-left: 50px;
-    margin-top: 10px;
-  }
-
-}

@@ -16,8 +16,8 @@ export class SignComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.formBuilder.group( {
-      login_1: this.formBuilder.control('',Validators.required),
-      password_1: this.formBuilder.control('', Validators.compose([Validators.required, Validators.minLength(8)])),
+      login: this.formBuilder.control('',Validators.required),
+      password: this.formBuilder.control('', Validators.compose([Validators.required, Validators.minLength(8)])),
       password_confirmation: '',
       login_name:this.formBuilder.control('', Validators.compose([Validators.required, Validators.minLength(2)]))
     });
@@ -48,27 +48,8 @@ export class SignComponent implements OnInit {
       this.router.navigate(['/listing'])
       //редирект куда-то
     })
-if ((this.login_1 == 2 || this.login_1 > 2  ) && (this.password_1 == 8 || this.password_1 > 8)) {
-  this.form.invalid = false;
-} else {
-  this.form.invalid = true;
-}
 
   }
-  get password_1() {
-    return this.form.get('password_1')
-  }
 
-  get login_1() {
-    return this.form.get('login_1')
-  }
-
-  get login_name() {
-    return this.form.get('login_name')
-  }
-
-  get password_confirmation() {
-    return this.form.get('password_confirmation')
-  }
   }
 

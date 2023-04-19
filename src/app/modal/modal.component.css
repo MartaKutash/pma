@@ -1,0 +1,25 @@
+#modal-content-wrapper {
+  width: 500px;
+  height: 500px;
+}
+#modal-title {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+}
+#modal-close-button {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#modal-close-button1 {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+
+

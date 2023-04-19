@@ -19,6 +19,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { BoardComponent } from './board/board.component';
+import {AdDirective} from "./board/ad.directive";
+import { ModalComponent } from './modal/modal.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +34,8 @@ import { BoardComponent } from './board/board.component';
     SignComponent,
     DeleteAccountComponent,
     BoardComponent,
+    AdDirective,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -42,12 +49,14 @@ import { BoardComponent } from './board/board.component';
     MatIconModule,
     MatToolbarModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule {
-  /*token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MmIwOGVhYmE2NTE0Y2M4MDk2NjE4OCIsImxvZ2luIjoibWFydGhhIiwiaWF0IjoxNjgwNTQyMDEzLCJleHAiOjE2ODA1ODUyMTN9.JlTSN3s-aL-p_F-Qm_lX30tl4zSfKoLhivbGu2pw_3Y'*/
 
 
 }

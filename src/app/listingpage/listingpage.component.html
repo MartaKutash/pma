@@ -1,6 +1,6 @@
 <header>
   <div class="logoapp">
-    <a id="log" routerLink="/main" routerLinkActive="active"><img class="logo_header" src="/./assets/img/pmaicon.svg"><i>PMA</i></a>
+    <a id="log" href="/main" routerlink="/main" routerlinkactive="active"><img class="logo_header" src="/./assets/img/pmaicon.svg"><i>PMA</i></a>
   </div>
 
   <div class="switcher">
@@ -9,34 +9,29 @@
   </div>
 
   <div class="log">
-    <button class="board_button"><img id="new_board" src="/./assets/img/newboard2.png" title="new board" (click)="createboard()"></button>
+    <button class="board_button"><img id="new_board" src="/./assets/img/newboard2.png" title="new board" (click)="createBoard()"></button>
     <div class="dropdown">
     <button class="logged_icon"><img id="logged" src="/./assets/img/loggedin.png" title="you logged"></button>
     <div class="dropdown_content">
-      <div class="prof_name">Name</div>
-      <button id="profile_btn"><a routerLink="/delete" routerLinkActive="active">Profile</a></button>
-      <button id="logout_btn" (click)="logout()"><a href="/main">Logout</a></button>
+      <div class="prof_name">name</div>
+      <button id="profile_btn"><a href="/delete" routerlink="/delete" routerlinkactive="active">Profile</a></button>
+      <button id="logout_btn" (click)="openModal()"><a>Logout</a></button>
+
     </div>
   </div>
   </div>
   <form id="search_form">
     <div class="search_div">
-      <input
-        type="search"
-        id="mySearch"
-        placeholder="Search the task" />
+      <input type="search" id="mySearch" placeholder="Search the task">
       <button>Search</button>
     </div>
   </form>
 </header>
 
 <main>
-
-  <a routerLink="/board" routerLinkActive="active"><form class="board_form">
-    <div class="form_header">
-    <a href="#"><img src="/../assets/img/edit_icon.png" title="Edit board"></a>
-    <a href="#"><img class="del_icon" src="/../assets/img/delete_icon.png" title="Delete board"></a></div>
-  </form></a>
+<div class="main_container">
+  <ng-template adHost></ng-template>
+</div>
 
 </main>
 
@@ -48,3 +43,4 @@
       <a href="https://rs.school/js/" target="_blank"><img class="logo_footer" src="/./assets/img/rsschooljs.svg" alt="RSSchool logo"></a>
     </div>
 </footer>
+

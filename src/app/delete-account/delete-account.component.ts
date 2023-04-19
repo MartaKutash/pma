@@ -25,26 +25,11 @@ export class DeleteAccountComponent implements OnInit {
   }
   obj: ResponseObj | undefined;
   register() {
-    console.log('register');
     let user = {
       login: this.form.get('login_1').value,
       name: this.form.get('login_name').value,
       password: this.form.get('password_1').value,
     }
-
-    console.log(user)
-    console.log('login')
-    console.log(this.form.value)
-
-    this.auth.register(user).subscribe(data => {
-      this.obj = data
-      console.log(data)
-      console.log(this.obj)
-      localStorage.setItem("obj", this.form.value)
-      console.log(localStorage.getItem("obj"))
-      this.router.navigate(['/listing'])
-      //редирект куда-то
-    })
 
   }
   get password_1() {

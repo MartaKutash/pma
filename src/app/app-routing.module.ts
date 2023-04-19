@@ -5,6 +5,7 @@ import { DeleteAccountComponent } from './delete-account/delete-account.componen
 import { ListingpageComponent } from './listingpage/listingpage.component';
 import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { ModalComponent } from './modal/modal.component';
 import { SignComponent } from './sign/sign.component';
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'sign', component: SignComponent},
   {path: 'delete', component: DeleteAccountComponent},
   {path: 'board', component: BoardComponent},
+  {path: 'modal', component: ModalComponent},
 ];
 
 @NgModule({

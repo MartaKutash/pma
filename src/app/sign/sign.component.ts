@@ -28,31 +28,24 @@ export class SignComponent implements OnInit {
   }
   obj: ResponseObj | undefined;
   register() {
-    console.log('register');
     let user = {
       login: this.form.get('login_1').value,
       name: this.form.get('login_name').value,
       password: this.form.get('password_1').value,
     }
 
-    console.log(user)
-    console.log('login')
-    console.log(this.form.value)
-
     this.auth.register(user).subscribe(data => {
-      this.obj = data
-      console.log(data)
-      console.log(this.obj)
-      localStorage.setItem("obj", this.form.value)
-      console.log(localStorage.getItem("obj"))
-      this.router.navigate(['/listing'])
-      //редирект куда-то
+      localStorage.setItem("current_user_id", data._id)
+      let user2 = {
+        login: user.login,
+        password: user.password
+      }
+      console.log(user2)
+      this.auth.login(user2).subscribe(data => {
+        localStorage.setItem("token", data.token)
+        this.router.navigate(['/listing'])
+      })
     })
-if ((this.login_1 == 2 || this.login_1 > 2  ) && (this.password_1 == 8 || this.password_1 > 8)) {
-  this.form.invalid = false;
-} else {
-  this.form.invalid = true;
-}
 
   }
   get password_1() {
@@ -70,5 +63,5 @@ if ((this.login_1 == 2 || this.login_1 > 2  ) && (this.password_1 == 8 || this.p
   get password_confirmation() {
     return this.form.get('password_confirmation')
   }
-  }
+}
 

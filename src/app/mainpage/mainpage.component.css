@@ -100,6 +100,11 @@ header {
   margin-right: 80px;
 }
 
+.done {
+  width: 20px;
+  height: 20px;
+}
+
 .benefits {
   font-size: 20px;
   margin-top: 20px;
@@ -116,7 +121,7 @@ li {
 }
 
 .about_me {
-  margin-top: 80px;
+  margin-top: 100px;
   margin-left: 20px;
   margin-right: 100px;
   font-size: 20px;

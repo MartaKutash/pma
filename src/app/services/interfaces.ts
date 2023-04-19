@@ -15,9 +15,14 @@ export interface RegisterUser {
 }
 
 export interface ResponseObj {
-  obj: {
-    id: string
-    name: string
-    login: string
-  }
+  _id: string
+  name: string
+  login: string
+}
+
+export interface Board {
+  _id?: String
+  title: string
+  owner: string
+  users: String[]
 }

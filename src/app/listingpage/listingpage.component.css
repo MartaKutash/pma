@@ -121,15 +121,18 @@ header {
 main {
   width: 100%;
   height: 100%;
-  padding-top: 150px;
+  padding-top: 50px;
 }
 
-.board_form {
-  width: 350px;
-  height: 250px;
-  background-color: gainsboro;
-
+.main_container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 150px;
 }
+
 
 .form_header {
   width: 350px;

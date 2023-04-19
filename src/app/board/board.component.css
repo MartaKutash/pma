@@ -8,7 +8,7 @@ main {
   width: 350px;
   height: 250px;
   background-color: gainsboro;
-
+  margin-right: 20px;
 }
 
 .form_header {

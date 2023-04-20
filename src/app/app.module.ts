@@ -23,6 +23,7 @@ import {AdDirective} from "./board/ad.directive";
 import { ModalComponent } from './modal/modal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ModalBoardComponent } from './modal-board/modal-board.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     DeleteAccountComponent,
     BoardComponent,
     AdDirective,
-    ModalComponent
+    ModalComponent,
+    ModalBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent]
+  entryComponents: [ModalComponent, ModalBoardComponent]
 })
 export class AppModule {
 

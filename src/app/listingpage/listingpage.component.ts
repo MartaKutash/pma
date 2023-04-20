@@ -8,6 +8,7 @@ import {BoardService} from "../services/board.service";
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { style } from '@angular/animations';
+import { ModalBoardComponent } from '../modal-board/modal-board.component';
 
 
 
@@ -23,7 +24,7 @@ export class ListingpageComponent implements OnInit {
   bodyText: string | undefined;
 
   ngOnInit(): void {
-    const userId = localStorage.getItem("current_user_id") || ''
+    /*const userId = localStorage.getItem("current_user_id") || ''
     this.boardService.getBoardsByUserId(userId).subscribe(data => {
         this.boards = data
         this.boards.forEach(board => this.renderBoard(board))
@@ -50,7 +51,7 @@ export class ListingpageComponent implements OnInit {
     this.boardService.createBoard(board).subscribe(data => {
       this.renderBoard(data)
       this.boards.push(data)
-    })
+    })*/
   }
 
   constructor(private router: Router,
@@ -68,19 +69,30 @@ export class ListingpageComponent implements OnInit {
   openModal() {
 
     this.dialogConfig.id = "projects-modal-component";
-    this.dialogConfig.height = "300px";
-    this.dialogConfig.width = "400px";
+    this.dialogConfig.height = "600px";
+    this.dialogConfig.width = "550px";
     this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
   }
 
+  dialogConfig1 = new MatDialogConfig();
+  modalDialog1: MatDialogRef<ModalBoardComponent, any> | undefined;
+  ngAfterViewInit1(): void {
+    document.onclick = (args: any) : void => {
+          if(args.target.tagName === 'BODY') {
+              this.modalDialog1?.close()
+          }
+      }
   }
-  /*logout() {
-   /* if (confirm("Do you really want to logout?")) {
-      localStorage.removeItem("current_user_id")
-      localStorage.removeItem("token")
-      this.router.navigate(['/main'])
-    } else {
-      this.router.navigate(['/listing'])*/
+  openModal1() {
+
+    this.dialogConfig1.id = "projects-modal-component1";
+    this.dialogConfig1.height = "500px";
+    this.dialogConfig1.width = "650px";
+    this.modalDialog1 = this.matDialog.open(ModalBoardComponent, this.dialogConfig1);
+  }
+
+  }
+
 
 
 

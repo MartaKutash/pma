@@ -5,22 +5,22 @@ main {
 }
 
 .board_form {
-  width: 350px;
-  height: 250px;
+  width: 250px;
+  height: 200px;
   background-color: gainsboro;
   margin-right: 20px;
   display: hidden;
 }
 
-.form_header {
-  width: 350px;
+.column_header {
+  width: 250px;
   height: 80px;
   background-color: blueviolet;
 }
 
 .del_icon {
   width: 22px;
-  margin-left: 300px;
+  margin-left: 200px;
   margin-top: -60px;
 }
 

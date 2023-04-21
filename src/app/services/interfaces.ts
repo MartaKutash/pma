@@ -26,3 +26,8 @@ export interface Board {
   owner: string
   users: String[]
 }
+
+export interface BoardWithIndex {
+  index: number,
+  board: Board
+}

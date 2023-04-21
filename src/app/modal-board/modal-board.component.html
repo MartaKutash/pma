@@ -1,7 +1,7 @@
 <div class="formlar">
-<form #boardName="ngForm" (ngSubmit)="createBoard()">
+<form [formGroup]="form" (ngSubmit)="createBoard()">
   <p>New Board</p>
-  <input type="text" name="boardname" placeholder="boardname" ngModel>
+  <input type="text" formControlName="boardname" placeholder="boardname" ngModel>
   <input class="button_ok" type="submit" value="Ok">
   <input class="button_cancel" type="button" value="Cancel" (click)="exit()">
   <ng-template adHost></ng-template>

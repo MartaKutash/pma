@@ -19,7 +19,6 @@ export class AuthService {
 
   getAuthHeader() {
     const token = localStorage.getItem("token")
-    console.log(token)
     const options = {
       headers: new HttpHeaders({'Authorization': `Bearer ${token}`})
     }

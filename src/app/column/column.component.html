@@ -1,0 +1,46 @@
+<header>
+  <div class="logoapp">
+    <a id="log" href="/main" routerlink="/main" routerlinkactive="active"><img class="logo_header" src="/./assets/img/pmaicon.svg"><i>PMA</i></a>
+  </div>
+
+  <div class="switcher">
+    <button class="sw-en">EN</button>
+    <button class="sw-ru">RU</button>
+  </div>
+
+  <div class="log">
+    <button class="board_button"><img id="new_column" src="/./assets/img/newboard2.png" title="new column" (click)="openModal1()"></button>
+    <button routerLink="/listing" routerLinkActive="active" class="boards_button"><img id="boards" src="/./assets/img/boards.png" title="boards"></button>
+    <div class="dropdown">
+    <button class="logged_icon"><img id="logged" src="/./assets/img/loggedin.png" title="you logged"></button>
+    <div class="dropdown_content">
+      <div class="prof_name">name</div>
+      <button id="profile_btn"><a href="/delete" routerlink="/delete" routerlinkactive="active">Profile</a></button>
+      <button id="logout_btn" (click)="openModal()"><a>Logout</a></button>
+
+    </div>
+  </div>
+  </div>
+  <form id="search_form">
+    <div class="search_div">
+      <input type="search" id="mySearch" placeholder="Search the task">
+      <button>Search</button>
+    </div>
+  </form>
+</header>
+
+<main>
+<div class="main_container">
+  <ng-template adHost></ng-template>
+</div>
+
+</main>
+
+<footer class="footer_container">
+  <div class="footer_link"><a class="git_link" href="https://github.com/MartaKutash" target="_blank">Marta Kutash</a>
+    </div>
+  <div class="date_footer">April 2023</div>
+    <div class="rsschool">
+      <a href="https://rs.school/js/" target="_blank"><img class="logo_footer" src="/./assets/img/rsschooljs.svg" alt="RSSchool logo"></a>
+    </div>
+</footer>

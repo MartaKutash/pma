@@ -27,11 +27,11 @@ header {
   color: black;
 }
 
-.switcher {
+/*.switcher {
   padding-left: 0px;
   margin-top: 0px;
 
-}
+}*/
 
 .sw-en {
   width: 70px;
@@ -42,10 +42,10 @@ header {
   margin-left: 5px;
 }
 
-.log {
+/*.log {
   padding-left: 0px;
   margin-top: 0px;
-}
+}*/
 
 .login {
   width: 70px;
@@ -57,7 +57,7 @@ header {
 }
 
 main {
-  padding-top: 50px;
+  padding-top: 20px;
   height: 100%;
   width: 100%;
   display: flex;

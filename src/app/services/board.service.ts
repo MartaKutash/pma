@@ -18,7 +18,10 @@ export class BoardService {
   }
 
   getBoardsByUserId(user_id: String): Observable<Board[]> {
-    const token = localStorage.getItem("token")
     return this.http.get<Board[]>(this.baseUrl + '/boardsSet/' + user_id, this.authService.getAuthHeader())
+  }
+
+  deleteBoard(board_id: String): Observable<Board> {
+    return this.http.delete<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
   }
 }

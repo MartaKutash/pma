@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { DragDropModule} from '@angular/cdk/drag-drop';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListingpageComponent } from './listingpage/listingpage.component';
@@ -24,6 +25,9 @@ import { ModalComponent } from './modal/modal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ModalBoardComponent } from './modal-board/modal-board.component';
+import { ColumnComponent } from './column/column.component';
+import { ColumnFormComponent } from './column-form/column-form.component';
+import { ColumnModalComponent } from './column-modal/column-modal.component';
 
 
 @NgModule({
@@ -37,7 +41,10 @@ import { ModalBoardComponent } from './modal-board/modal-board.component';
     BoardComponent,
     AdDirective,
     ModalComponent,
-    ModalBoardComponent
+    ModalBoardComponent,
+    ColumnComponent,
+    ColumnFormComponent,
+    ColumnModalComponent
   ],
   imports: [
     BrowserModule,

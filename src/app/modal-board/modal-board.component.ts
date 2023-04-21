@@ -1,11 +1,22 @@
-import { Component, OnInit, ViewContainerRef, QueryList, ViewChild, ViewChildren, } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import {
+  Component,
+  OnInit,
+  ViewContainerRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  Input,
+  Host,
+  Inject,
+} from '@angular/core';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {Route, Router} from '@angular/router';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ListingpageComponent } from '../listingpage/listingpage.component';
 import {Board} from "../services/interfaces";
 import {BoardComponent} from "../board/board.component";
 import {BoardService} from "../services/board.service";
+import {AdDirective} from "../board/ad.directive";
 
 @Component({
   selector: 'app-modal-board',
@@ -13,46 +24,34 @@ import {BoardService} from "../services/board.service";
   styleUrls: ['./modal-board.component.css']
 })
 export class ModalBoardComponent implements OnInit {
-  boardService: any;
-  boards: any;
+
+  form: any = FormGroup;
+  @ViewChild(AdDirective, {static: true}) adHost!: AdDirective;
   bodyText: string | undefined;
+
   constructor(
-    private formBuilder: FormBuilder, private router: Router, public dialogRef: MatDialogRef<ModalBoardComponent>, public viewContainerRef: ViewContainerRef
-  ) {}
+    private formBuilder: FormBuilder,
+    private router: Router,
+    public dialogRef: MatDialogRef<ModalBoardComponent>,
+    public viewContainerRef: ViewContainerRef
+    ) {}
+
   ngOnInit() {
-    const userId = localStorage.getItem("current_user_id") || ''
-    this.boardService.getBoardsByUserId(userId).subscribe((data: any) => {
-        this.boards = data
-        this.boards.forEach((board: Board) => this.renderBoard(board))
-      })
-
-      this.bodyText = 'This text can be updated in modal 1';
-
-    }
-  renderBoard(board: Board) {
-    console.log(this.adHost)
-    const componentRef = this.adHost.viewContainerRef.createComponent<BoardComponent>(BoardComponent);
-    componentRef.instance.name = board.title;
+    this.form = this.formBuilder.group( {
+      boardname: '',
+    });
+    this.bodyText = 'This text can be updated in modal 1';
   }
-  adHost(adHost: any) {
-    throw new Error('Method not implemented.');
-  }
+
+
   createBoard() {
-    const userId = localStorage.getItem("current_user_id") || ''
-    const board: Board = {
-      title: "hardcoded title",
-      owner: userId,
-      users: []
-    }
-    this.boardService.createBoard(board).subscribe((data: Board) => {
-      this.renderBoard(data)
-      this.boards.push(data)
-    })}
+    this.dialogRef.close({title: this.form.get('boardname').value})
+  }
 
 
  exit() {
   this.router.navigate(['/listing'])
   this.dialogRef.close();
-
  }
+
 }

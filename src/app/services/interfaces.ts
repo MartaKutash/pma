@@ -27,7 +27,4 @@ export interface Board {
   users: String[]
 }
 
-export interface BoardWithIndex {
-  index: number,
-  board: Board
-}
+

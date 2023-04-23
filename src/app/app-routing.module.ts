@@ -11,6 +11,7 @@ import { ModalBoardComponent } from './modal-board/modal-board.component';
 import { ModalComponent } from './modal/modal.component';
 import { SignComponent } from './sign/sign.component';
 import { ColumnModalComponent } from './column-modal/column-modal.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'modal-board', component: ModalBoardComponent},
   {path: 'board', component: ColumnComponent},
   {path: 'column-form', component: ColumnFormComponent},
-  {path: 'column-modal', component: ColumnModalComponent}
+  {path: 'column-modal', component: ColumnModalComponent},
+  {path: 'edit-modal', component: EditModalComponent}
 ];
 
 @NgModule({

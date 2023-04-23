@@ -24,4 +24,8 @@ export class BoardService {
   deleteBoard(board_id: String): Observable<Board> {
     return this.http.delete<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
   }
+
+  editBoard(board_id: String): Observable<Board> {
+    return this.http.put<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
+  }
 }

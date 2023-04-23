@@ -28,6 +28,8 @@ import { ModalBoardComponent } from './modal-board/modal-board.component';
 import { ColumnComponent } from './column/column.component';
 import { ColumnFormComponent } from './column-form/column-form.component';
 import { ColumnModalComponent } from './column-modal/column-modal.component';
+import { EditModalComponent } from './edit-modal/edit-modal.component';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { ColumnModalComponent } from './column-modal/column-modal.component';
     ModalBoardComponent,
     ColumnComponent,
     ColumnFormComponent,
-    ColumnModalComponent
+    ColumnModalComponent,
+    EditModalComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,11 +63,11 @@ import { ColumnModalComponent } from './column-modal/column-modal.component';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalComponent, ModalBoardComponent]
+  entryComponents: [ModalComponent, ModalBoardComponent, EditModalComponent]
 })
 export class AppModule {
 

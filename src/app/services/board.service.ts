@@ -17,6 +17,10 @@ export class BoardService {
     return this.http.post<Board>(this.baseUrl + '/boards', board, this.authService.getAuthHeader())
   }
 
+  getBoardById(id: String): Observable<Board> {
+    return this.http.get<Board>(this.baseUrl + '/boards/' + id, this.authService.getAuthHeader())
+  }
+
   getBoardsByUserId(user_id: String): Observable<Board[]> {
     return this.http.get<Board[]>(this.baseUrl + '/boardsSet/' + user_id, this.authService.getAuthHeader())
   }
@@ -25,7 +29,8 @@ export class BoardService {
     return this.http.delete<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
   }
 
-  editBoard(board_id: String): Observable<Board> {
-    return this.http.put<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
+  editBoard(board_id: String, board: Board): Observable<Board> {
+    return this.http.put<Board>(this.baseUrl + '/boards/' + board_id, board, this.authService.getAuthHeader())
   }
+
 }

@@ -1,1 +1,22 @@
+#modal-content-wrapper {
+  width: 400px;
+  height: 300px;
+}
+#modal-title {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-left: 130px;
+}
+#modal-footer {
+  justify-self: right;
+  align-self: center;
+}
+#modal-close-button {
+  margin-top: 20px;
+  margin-left: 150px;
+}
 
+#modal-close-button1 {
+  margin-top: -60px;
+  margin-left: 300px;
+}

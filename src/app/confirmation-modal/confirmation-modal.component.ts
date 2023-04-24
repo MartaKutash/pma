@@ -1,9 +1,18 @@
-
-import { Component, EventEmitter, Injectable, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
-import { config } from 'rxjs';
-import { MatDialogRef } from '@angular/material/dialog';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Injectable,
+  Input,
+  OnInit,
+  Output,
+  TemplateRef,
+  ViewChild
+} from '@angular/core';
+import {config} from 'rxjs';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Route, Router} from '@angular/router';
-import { BoardComponent } from '../board/board.component';
+import {BoardComponent} from '../board/board.component';
 import {BoardService} from "../services/board.service";
 
 
@@ -18,8 +27,10 @@ import {BoardService} from "../services/board.service";
 export class ConfirmationModalComponent implements OnInit {
 
 
-
-  constructor(public dialogRef: MatDialogRef<ConfirmationModalComponent>, private router: Router) {
+  constructor(private router: Router,
+              private boardService: BoardService,
+              @Inject(MAT_DIALOG_DATA) public data: any,
+              public dialogRef: MatDialogRef<ConfirmationModalComponent>) {
 
   }
 
@@ -28,11 +39,14 @@ export class ConfirmationModalComponent implements OnInit {
 
   closeModal() {
     this.dialogRef.close();
-
   }
 
   deleteBoard() {
-
+    this.boardService.deleteBoard(this.data.id).subscribe(data => {
+      console.log(data)
+      this.data.listing.deleteBoard(this.data.id)
+    })
+    this.dialogRef.close();
   }
 
 }

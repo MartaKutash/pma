@@ -10,6 +10,7 @@ import { Component,
 import {Route, Router} from '@angular/router';
 import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { ColumnFormComponent } from '../column-form/column-form.component';
 
 
 @Component({
@@ -30,10 +31,13 @@ constructor(
   ) {}
 
 exit() {
-  this.router.navigate(['/listing'])
+  this.router.navigate(['/board'])
   this.dialogRef.close();
  }
 
- createBoard() {}
+ createColumn() {
+  this.dialogRef.close()
+  this.createColumn()
+ }
 
 }

@@ -1,11 +1,12 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
-import { ListingpageComponent } from '../listingpage/listingpage.component';
+import {ListingpageComponent} from '../listingpage/listingpage.component';
 import {BoardService} from "../services/board.service";
-import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { EditModalComponent } from '../edit-modal/edit-modal.component';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { ConfirmationModalComponent } from '../confirmation-modal/confirmation-modal.component';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
+import {EditModalComponent} from '../edit-modal/edit-modal.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {ConfirmationModalComponent} from '../confirmation-modal/confirmation-modal.component';
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -20,53 +21,35 @@ export class BoardComponent {
   MatDialogConfig: any;
   modalDialog: any;
 
-  delete() {
-    console.log(this.name)
-    console.log(this.id)
-    this.boardService.deleteBoard(this.id).subscribe( data => {
-      console.log(data)
-      this.listing.deleteBoard(this.id.toString())
-    })}
-
-
-
-  /*editBoard () {
-    console.log(this.name)
-    console.log(this.id)
-    this.boardService.editBoard(this.id).subscribe( data => {
-      console.log(data)
-      this.board.editBoard(this.id.toString())
-    })
-
-  }*/
-
-
   constructor(private boardService: BoardService,
-    private listing: ListingpageComponent, public matDialog: MatDialog) {}
+              private listing: ListingpageComponent, public matDialog: MatDialog) {
+  }
 
-
-    openModal2() {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.disableClose = true;
-      dialogConfig.id = "modal-component";
-      dialogConfig.height = "350px";
-      dialogConfig.width = "600px";
-      dialogConfig.data = {
-        id: this.id,
-        listing: this.listing
-      }
-      const modalDialog = this.matDialog.open(EditModalComponent, dialogConfig);
+  openModal2() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "350px";
+    dialogConfig.width = "600px";
+    dialogConfig.data = {
+      id: this.id,
+      listing: this.listing
     }
+    const modalDialog = this.matDialog.open(EditModalComponent, dialogConfig);
+  }
 
-
-    openConfirmModal () {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.disableClose = true;
-      dialogConfig.id = "modal-component";
-      dialogConfig.height = "350px";
-      dialogConfig.width = "600px";
-      const modalDialog = this.matDialog.open(ConfirmationModalComponent, dialogConfig);
+  openConfirmModal() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "350px";
+    dialogConfig.width = "600px";
+    dialogConfig.data = {
+      id: this.id,
+      listing: this.listing
     }
+    const modalDialog = this.matDialog.open(ConfirmationModalComponent, dialogConfig);
+  }
 
 }
 

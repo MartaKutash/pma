@@ -27,8 +27,7 @@ export class EditModalComponent implements OnInit {
 
   Ok() {
     this.editBoard(this.form.get('boardname').value)
-    //alert("Changed")
-    this.exit()
+    this.dialogRef.close();
   }
 
   exit() {

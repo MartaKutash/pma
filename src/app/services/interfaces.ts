@@ -27,4 +27,10 @@ export interface Board {
   users: String[]
 }
 
+export interface Column {
+  _id?: String
+  title: string
+  order: number
+  board_id: String
+}
 

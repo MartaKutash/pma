@@ -1,10 +1,10 @@
 <main>
-    <form class="board_form">
-      {{name}}
-      <a routerLink="/board" routerLinkActive="active"><div class="form_header"></div></a>
 
-      <a (click)="openModal2()"><img src="/../assets/img/edit_icon.png" title="Edit board"></a>
-    <a (click)="openConfirmModal()"><img class="del_icon" src="/../assets/img/delete_icon.png" title="Delete board"></a>
+    <form class="board_form">
+
+      <div class="form_header"><a class="edit_board" (click)="openModal2()"><img src="/../assets/img/edit_icon.png" title="Edit board"></a>
+        <a class="delete_board" (click)="openConfirmModal()"><img class="del_icon" src="/../assets/img/delete.png" title="Delete board"></a></div>
+        <a class="board_n" routerLink="/board/{{id}}" routerLinkActive="active"><div class="form_body">{{name}}</div></a>
   </form>
 
   </main>

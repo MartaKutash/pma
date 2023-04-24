@@ -21,6 +21,9 @@ import { ColumnFormComponent } from '../column-form/column-form.component';
 export class ColumnModalComponent implements OnInit {
   form: any = FormGroup;
 ngOnInit(): void {
+  this.form = this.formBuilder.group( {
+    columnname: '',
+  });
 
 }
 constructor(
@@ -36,8 +39,7 @@ exit() {
  }
 
  createColumn() {
-  this.dialogRef.close()
-  this.createColumn()
+  this.dialogRef.close({title: this.form.get('columnname').value})
  }
 
 }

@@ -30,6 +30,7 @@ import { ColumnFormComponent } from './column-form/column-form.component';
 import { ColumnModalComponent } from './column-modal/column-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
+import { EditColumnModalComponent } from './edit-column-modal/edit-column-modal.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { ConfirmationModalComponent } from './confirmation-modal/confirmation-mo
     ColumnFormComponent,
     ColumnModalComponent,
     EditModalComponent,
-    ConfirmationModalComponent
+    ConfirmationModalComponent,
+    EditColumnModalComponent
   ],
   imports: [
     BrowserModule,

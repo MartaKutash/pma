@@ -5,6 +5,7 @@ import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ColumnModalComponent } from '../column-modal/column-modal.component';
+import { EditColumnModalComponent } from '../edit-column-modal/edit-column-modal.component';
 
 @Component({
   selector: 'app-column-form',
@@ -24,6 +25,24 @@ export class ColumnFormComponent implements OnInit {
 
   constructor(private columnService: ColumnService,
     private columnComponent: ColumnComponent, public matDialog: MatDialog) {
+}
+
+openModal() {
+  const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.id = "modal-component";
+    dialogConfig.height = "350px";
+    dialogConfig.width = "500px";
+    dialogConfig.data = {
+      id: this.id,
+      listing: this.columnComponent
+    }
+    const modalDialog = this.matDialog.open(EditColumnModalComponent, dialogConfig);
+
+}
+
+openModal2() {
+
 }
 
 }

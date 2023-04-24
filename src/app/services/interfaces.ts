@@ -21,16 +21,16 @@ export interface ResponseObj {
 }
 
 export interface Board {
-  _id?: String
+  _id?: string
   title: string
   owner: string
   users: String[]
 }
 
 export interface Column {
-  _id?: String
+  _id?: string
   title: string
   order: number
-  board_id: String
+  board_id?: String
 }
 

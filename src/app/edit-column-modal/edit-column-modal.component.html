@@ -1,0 +1,10 @@
+<div class="formlar">
+  <form [formGroup]="form" (ngSubmit)="Ok()">
+    <p>Edit Column</p>
+    <input type="text" formControlName="columnname" placeholder="Enter column mame" ngModel>
+    <input class="button_ok" type="submit" value="Ok">
+    <input class="button_cancel" type="button" value="Cancel" (click)="exit()">
+    <ng-template adHost></ng-template>
+  </form>
+
+  </div>

@@ -19,9 +19,6 @@ header {
   margin-left: 0px;
 }
 
-.logoapp {
-  margin-left: 0px;
-}
 
 #log {
   text-decoration: none;
@@ -29,11 +26,6 @@ header {
   color: black;
 }
 
-.switcher {
-  padding-left: 0px;
-  margin-top: 0px;
-
-}
 
 .sw-en {
   width: 70px;
@@ -44,10 +36,6 @@ header {
   margin-left: 5px;
 }
 
-.log {
-  padding-left: 0px;
-  margin-top: 0px;
-}
 
 .login {
   width: 70px;
@@ -221,7 +209,6 @@ li {
   position: fixed;
   display: flex;
   justify-content: space-between;
-  /*align-items: center;*/
   flex-direction: row;
   margin: 0 auto;
 }
@@ -265,8 +252,3 @@ li {
     }
 }
 
-/*@media (min-width: 800px) {
-  .text-primary {
-      margin-left: 10px;
-    }
-}*/

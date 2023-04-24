@@ -8,6 +8,7 @@ import {AdDirective} from "../board/ad.directive";
 import {ColumnService} from "../services/column.service";
 import { ColumnFormComponent } from '../column-form/column-form.component';
 import { Title } from '@angular/platform-browser';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-column',
@@ -17,27 +18,33 @@ import { Title } from '@angular/platform-browser';
 export class ColumnComponent implements OnInit {
   @ViewChild(AdDirective, {static: true}) adHost!: AdDirective;
   columns: Column[] = []
+  boardId!: string
   ngOnInit(): void {
-    const boardId = localStorage.getItem("current_board_id") || ''
-    this.columnService.getColumnsByBoardId(boardId).subscribe(data => {
-      this.columns = data
-      this.columns.forEach((column, index) => {
-        this.renderColumn(index, column)
+    this.route.params.subscribe( params => {
+      this.boardId = params['id']
+      this.columnService.getColumnsByBoardId(this.boardId).subscribe(data => {
+        this.columns = data.sort((a, b) => a.order - b.order);
+        console.log(this.columns)
+        this.columns.forEach((column, index) => {
+          this.renderColumn(index, column)
+        })
       })
     })
   }
 
-  constructor(private router: Router, public matDialog: MatDialog, private columnService: ColumnService) {
+  constructor(private router: Router,
+     public matDialog: MatDialog,
+     private columnService: ColumnService,
+     private route: ActivatedRoute) {
 }
 
 createColumn(title: string) {
-  const boardId = localStorage.getItem("current_board_id") || ''
-  const board: Column = {
+
+  const column: Column = {
     title: title,
-    order: 1,
-    board_id: ''
+    order: this.columns.length
   }
-  this.columnService.createColumn(board).subscribe(data => {
+  this.columnService.createColumn(column, this.boardId).subscribe(data => {
     const next_index = this.columns.length
     this.renderColumn(next_index, data)
     this.columns.push(data)
@@ -53,7 +60,12 @@ renderColumn(index: number, column: Column) {
   componentRef.instance.id = column._id || '';
 }
 
-
+editColumn(column: Column) {
+  const index = this.columns.findIndex(b => b._id == column._id)
+  this.adHost.viewContainerRef.remove(index)
+  this.columns[index] = column
+  this.renderColumn(index, column)
+}
 
 
 
@@ -70,8 +82,8 @@ dialogConfig = new MatDialogConfig();
   }
 openModal() {
   this.dialogConfig.id = "projects-modal-component";
-  this.dialogConfig.height = "600px";
-  this.dialogConfig.width = "550px";
+  this.dialogConfig.height = "300px";
+  this.dialogConfig.width = "250px";
   this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
   this.modalDialog.afterClosed().subscribe(evet => console.log(evet))
 }
@@ -89,11 +101,13 @@ dialogConfig1 = new MatDialogConfig();
 
 openModal1() {
   this.dialogConfig1.id = "projects-modal-component1";
-  this.dialogConfig1.height = "600px";
-  this.dialogConfig1.width = "550px";
+  this.dialogConfig1.height = "300px";
+  this.dialogConfig1.width = "400px";
   this.modalDialog1 = this.matDialog.open(ColumnModalComponent, this.dialogConfig1);
-  this.modalDialog1.afterClosed().subscribe(evet => console.log(evet))
-  this.createColumn()
+  this.modalDialog1.afterClosed().subscribe(data => {
+    const title = data.title
+    this.createColumn(title)
+  })
 
 }
 

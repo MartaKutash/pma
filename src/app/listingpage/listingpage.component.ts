@@ -102,8 +102,8 @@ export class ListingpageComponent implements OnInit {
 
   openModal1() {
     this.dialogConfig1.id = "projects-modal-component1";
-    this.dialogConfig1.height = "500px";
-    this.dialogConfig1.width = "650px";
+    this.dialogConfig1.height = "300px";
+    this.dialogConfig1.width = "450px";
     this.modalDialog1 = this.matDialog.open(ModalBoardComponent, this.dialogConfig1);
     this.modalDialog1.afterClosed().subscribe(data => {
       const title = data.title

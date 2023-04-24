@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'delete', component: DeleteAccountComponent},
   {path: 'modal', component: ModalComponent},
   {path: 'modal-board', component: ModalBoardComponent},
-  {path: 'board', component: ColumnComponent},
+  {path: 'board/:id', component: ColumnComponent},
   {path: 'column-form', component: ColumnFormComponent},
   {path: 'column-modal', component: ColumnModalComponent},
   {path: 'edit-modal', component: EditModalComponent}

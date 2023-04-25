@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -11,12 +11,12 @@ import {ColumnService} from "../services/column.service";
 })
 export class EditColumnModalComponent {
   form: any = FormGroup;
-  data: any;
   column: any;
   constructor(private formBuilder: FormBuilder,
     private router: Router,
     public dialogRef: MatDialogRef<EditColumnModalComponent>,
-    private columnService: ColumnService,) {}
+    private columnService: ColumnService,
+    @Inject(MAT_DIALOG_DATA) public data: any) {}
 
     ngOnInit() {
       this.form = this.formBuilder.group({
@@ -37,12 +37,12 @@ export class EditColumnModalComponent {
   }
 
   editColumn(title: string) {
-    this.columnService.getColumnById(this.boardId, this.edited._id).subscribe((data: any) => {
+    this.columnService.getColumnById(this.data.board_id, this.data.id).subscribe((data: any) => {
       console.log(data)
       var edited = data
       edited.title = title
       edited._id = undefined
-      this.columnService.editColumn(this.data.id, edited).subscribe(data => {
+      this.columnService.editColumn(this.data.board_id, this.data.id, edited).subscribe(data => {
         console.log(data)
         this.data.column.editColumn(data)
       })

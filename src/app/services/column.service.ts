@@ -26,11 +26,11 @@ export class ColumnService {
     return this.http.get<Column[]>(this.baseUrl + '/boards/' + board_id + '/columns/', this.authService.getAuthHeader())
   }
 
-  /*deleteBoard(board_id: String): Observable<Board> {
-    return this.http.delete<Board>(this.baseUrl + '/boards/' + board_id, this.authService.getAuthHeader())
-  }*/
+  deleteColumn(board_id: String, column_id: String): Observable<Column> {
+    return this.http.delete<Column>(this.baseUrl + '/boards/' + board_id + '/columns/' + column_id, this.authService.getAuthHeader())
+  }
 
-  editColumn(board_id: String, column_id: String): Observable<Column> {
+  editColumn(board_id: String, column_id: String, board: Board): Observable<Column> {
     return this.http.put<Column>(this.baseUrl + '/boards/' + board_id + '/columns/' + column_id, this.authService.getAuthHeader())
   }
 }

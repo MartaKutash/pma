@@ -40,6 +40,11 @@ main {
   color: black;
 }
 
+.form_body {
+  margin-left: 100px;
+  margin-top: 25px;
+}
+
 .delete_board {
   cursor: pointer;
   color: black;

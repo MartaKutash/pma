@@ -31,6 +31,7 @@ import { ColumnModalComponent } from './column-modal/column-modal.component';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 import { EditColumnModalComponent } from './edit-column-modal/edit-column-modal.component';
+import { DeleteColumnModalComponent } from './delete-column-modal/delete-column-modal.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { EditColumnModalComponent } from './edit-column-modal/edit-column-modal.
     ColumnModalComponent,
     EditModalComponent,
     ConfirmationModalComponent,
-    EditColumnModalComponent
+    EditColumnModalComponent,
+    DeleteColumnModalComponent
   ],
   imports: [
     BrowserModule,

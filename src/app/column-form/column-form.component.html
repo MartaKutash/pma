@@ -1,7 +1,9 @@
 <main>
+  {{name}}
   <form class="column_form">
-    <div class="column_header">{{name}}</div>
-    <a (click)="openModal()"><img src="/../assets/img/edit_icon.png" title="Edit board"></a>
-  <a (click)="openModal2()"><img class="del_icon" src="/../assets/img/delete_icon.png" title="Delete board"></a>
-  </form>
+
+    <div class="column_header"><a (click)="openModal()"><img src="/../assets/img/edit_icon.png" title="Edit board"></a>
+      <a class="delete_btn" (click)="openModal2()"><img class="del_icon" src="/../assets/img/delete.png" title="Delete board"></a></div>
+<div class="form_body"></div>
+</form>
 </main>

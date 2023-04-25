@@ -58,6 +58,7 @@ renderColumn(index: number, column: Column) {
   const componentRef = this.adHost.viewContainerRef.createComponent<ColumnFormComponent>(ColumnFormComponent, options);
   componentRef.instance.name = column.title;
   componentRef.instance.id = column._id || '';
+  componentRef.instance.board_id = this.boardId;
 }
 
 editColumn(column: Column) {
@@ -67,7 +68,11 @@ editColumn(column: Column) {
   this.renderColumn(index, column)
 }
 
-
+deleteColumn(id: string) {
+  const index = this.columns.findIndex(b => b._id == id)
+  this.adHost.viewContainerRef.remove(index)
+  this.columns.splice(index,1);
+}
 
 
 dialogConfig = new MatDialogConfig();
@@ -82,8 +87,8 @@ dialogConfig = new MatDialogConfig();
   }
 openModal() {
   this.dialogConfig.id = "projects-modal-component";
-  this.dialogConfig.height = "300px";
-  this.dialogConfig.width = "250px";
+  this.dialogConfig.height = "600px";
+  this.dialogConfig.width = "550px";
   this.modalDialog = this.matDialog.open(ModalComponent, this.dialogConfig);
   this.modalDialog.afterClosed().subscribe(evet => console.log(evet))
 }

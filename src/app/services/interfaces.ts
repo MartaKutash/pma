@@ -31,6 +31,6 @@ export interface Column {
   _id?: string
   title: string
   order: number
-  board_id?: String
+  boardId?: String
 }
 

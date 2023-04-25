@@ -42,6 +42,7 @@ export class EditColumnModalComponent {
       var edited = data
       edited.title = title
       edited._id = undefined
+      edited.boardId = undefined
       this.columnService.editColumn(this.data.board_id, this.data.id, edited).subscribe(data => {
         console.log(data)
         this.data.column.editColumn(data)

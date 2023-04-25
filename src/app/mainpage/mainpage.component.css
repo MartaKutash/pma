@@ -246,9 +246,10 @@ li {
   color: blue;
 }
 
-@media (max-width: 800px) {
+@media only screen and (max-width: 1600px) and (min-width: 320px){
   .text-primary {
       margin-left: 10px;
     }
 }
+
 

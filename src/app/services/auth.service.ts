@@ -36,4 +36,16 @@ export class AuthService {
   getUsers(): Observable<ResponseObj[]> {
     return this.http.get<ResponseObj[]>(this.baseUrl + '/users', this.getAuthHeader())
   }
+
+  getUserById(user_id: String): Observable<ResponseObj> {
+    return this.http.get<ResponseObj>(this.baseUrl + '/users/' + user_id, this.getAuthHeader())
+  }
+
+  editUser(user_id:String, user: RegisterUser): Observable<ResponseObj> {
+    return this.http.put<ResponseObj>(this.baseUrl + '/users/' + user_id, user, this.getAuthHeader())
+  }
+
+  deleteUser(user_id:String): Observable<ResponseObj> {
+    return this.http.post<ResponseObj>(this.baseUrl + '/users/' + user_id, this.getAuthHeader())
+  }
 }

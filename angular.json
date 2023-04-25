@@ -9,10 +9,20 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale":"en-US",
+        "locales": {
+          "ru": {
+            "translation": "src/locale/messages.ru.xlf"
+          }
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize":true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/pma",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,6 +42,9 @@
             "scripts": []
           },
           "configurations": {
+            "ru": {
+              "localize": ["ru"]
+            },
             "production": {
               "budgets": [
                 {
@@ -62,10 +75,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pma:build:production"
+              "browserTarget": "i18n-pma:build:production"
+            },
+            "ru": {
+              "browserTarget": "i18n-pma:build:development,ru"
             },
             "development": {
-              "browserTarget": "pma:build:development"
+              "browserTarget": "i18n-pma:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +89,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pma:build"
+            "browserTarget": "pma:build",
+            "format": "xlf",
+            "outputPath": "src/locale"
           }
         },
         "test": {

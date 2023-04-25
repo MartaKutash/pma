@@ -15,29 +15,24 @@
 </header>
 
 <main>
-  <form class="sigin_container" [formGroup]="form" (ngSubmit)="register()">
+  <form class="sigin_container" [formGroup]="form" (ngSubmit)="edit()">
     <div><b> Edit profile</b> </div>
     <div class="login_input">
       <label> Login </label>
       <input class="login_area" type="text" formControlName="login_1" required pattern="string"/>
-      <div *ngIf="login_1.invalid && (login_1.touched || login_1.dirty)">
-        <span class="req_login" *ngIf="login_1.errors?.required">Login is required</span>
+      <div>
       </div>
     </div>
     <div class="login_name">
       <label>Your name</label>
       <input class="login_area" type="text" formControlName="login_name" required/>
-      <div *ngIf="login_name.invalid && (login_name.touched || login_name.dirty)">
-        <span class="req_name" *ngIf="login_name.errors?.required">Name is required</span>
-        <span class="req_name" *ngIf="login_name.hasError('minlength')">Name must be at least 2 characters</span>
+      <div>
       </div>
     </div>
     <div class="login_password">
       <label>Password</label>
       <input type="password" formControlName="password_1" required/>
-      <div *ngIf="password_1.invalid && (password_1.touched || password_1.dirty)">
-        <span *ngIf="password_1.errors?.required">Password is required</span>
-        <span class="require_passw" *ngIf="password_1.hasError('minlength')">Password must be at least 8 characters</span>
+      <div>
       </div>
     </div>
     <div class="repeat_password">
@@ -45,7 +40,7 @@
       <input type="password" formControlName="password_confirmation" required/>
     </div>
 
-    <button (ngSubmit)="register()" class="login_button" type="submit">Save</button>
+    <button (ngSubmit)="edit()" class="login_button" type="submit">Save</button>
     <button class="delete_account" type="submit">Delete my account</button>
   </form>
 </main>

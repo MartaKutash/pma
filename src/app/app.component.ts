@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   title = "pma";
   constructor(public breakpointObserver: BreakpointObserver) {}
   ngOnInit() {
-    this.breakpointObserver
+   this.breakpointObserver
       .observe([Breakpoints.TabletPortrait])
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
